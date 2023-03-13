@@ -4,7 +4,7 @@ on:
   workflow_dispatch
 
 jobs:
-  scrapewiki:
+  webscrappy-wiki-spider:
     runs-on: ubuntu-latest
     steps:
     - uses: action/checkout@v3
