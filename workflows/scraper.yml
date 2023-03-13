@@ -1,0 +1,25 @@
+name: Wiki Spider-Man
+
+on:
+  workflow_dispatch
+
+jobs:
+  scrapewiki:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: action/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    - run: pip install requests beautifulsoup4 requests
+    - run: python script.py
+    - run: | 
+          git config --global user.email "jvictorverde@gmail.com"
+          git config --global user.name "janjaom"
+          git add .
+          git commit -m "Automated Update"
+          git push 
+
+
+
+  
