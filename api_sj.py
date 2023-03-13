@@ -9,23 +9,14 @@ import urllib.request
 app = FastAPI()
 
 def web_scrap():
-    # Make a GET request to the Wikipedia page
+    
     response = requests.get("https://en.wikipedia.org/wiki/Spider-Man")
-
-    # Parse the HTML content of the page with BeautifulSoup
     soup = BeautifulSoup(response.content, 'html.parser')
-
-    # Find the infobox that contains the personal information section
     infobox = soup.find("table", {"class": "infobox"}).tbody
-
-    # Find the table rows that contain the personal information data
     personal_info_rows = infobox.find_all("tr")[2:14]
-
-    # Download the image
     image_url = "https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png"
     urllib.request.urlretrieve(image_url, "spiderman.png")
 
-    # Build the HTML response
     html = f"""
     <html>
         <head>
