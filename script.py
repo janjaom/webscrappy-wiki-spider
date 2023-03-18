@@ -4,7 +4,9 @@ import urllib.request
 
 def web_scrap(wikipage_scrap):
     # Make a GET request to the Wikipedia page
-    response = requests.get("https://en.wikipedia.org/wiki/Spider-Man")
+    #response = requests.get("https://en.wikipedia.org/wiki/Spider-Man")
+    response = requests.get(wikipage_scrap)
+
 
     # Parse the HTML content of the page with BeautifulSoup
     soup = BeautifulSoup(response.content, 'html.parser')
@@ -22,7 +24,7 @@ def web_scrap(wikipage_scrap):
     # Download the image 
     urllib.request.urlretrieve(image_url, "spiderman.png")
     # Create a new HTML file
-    with open("index.html", "w") as f:
+    with open("spiderman.html", "w") as f:
         f.write('<html>\n')
         f.write('  <head>\n')
         f.write('    <title>Spider-Man Personal Information</title>\n')
@@ -43,6 +45,12 @@ def web_scrap(wikipage_scrap):
         f.write('  </body>\n')
         f.write('</html>')
 
+def main():
+    print(web_scrap('https://en.wikipedia.org/wiki/Spider-Man'))
+
+
+if __name__ == '__main__':
+    main()
 
 
 
