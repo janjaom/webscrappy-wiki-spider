@@ -1,12 +1,12 @@
 name: Wiki Spider-Man
 
 on:
-  #push:
-    #branches:
-     # - main
+  push:
+    branches:
+      - main
   workflow_dispatch:
-  #schedule:
-    #- cron: '0 9 * * *'
+  schedule:
+    - cron: '0 9 * * *'
 
 jobs:
   scrapewiki:
@@ -22,7 +22,7 @@ jobs:
           git config --global user.email "jvictorverde@gmail.com"
           git config --global user.name "janjaom"
           git add .
-          git commit -m "script.py"
+          git commit -m "Automated added"
           git push 
 
 
