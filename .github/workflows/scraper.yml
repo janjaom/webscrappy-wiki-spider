@@ -22,7 +22,7 @@ jobs:
           git config --global user.email "jvictorverde@gmail.com"
           git config --global user.name "janjaom"
           git add .
-          git commit -m "Automated Update"
+          git commit -m "script.py"
           git push 
 
 
