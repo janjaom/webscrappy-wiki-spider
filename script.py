@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import urllib.request
-#
+#comment
 def web_scrap(wikipage_scrap):
     # Make a GET request to the Wikipedia page
     response = requests.get("https://en.wikipedia.org/wiki/Spider-Man")
