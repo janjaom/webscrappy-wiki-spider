@@ -24,7 +24,7 @@ def web_scrap(wikipage_scrap):
     # Download the image 
     urllib.request.urlretrieve(image_url, "spiderman.png")
     # Create a new HTML file
-    with open("spiderman.html", "w") as f:
+    with open("index.html", "w") as f:
         f.write('<html>\n')
         f.write('  <head>\n')
         f.write('    <title>Spider-Man Personal Information</title>\n')
